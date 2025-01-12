@@ -76,3 +76,108 @@ The application follows a component-based architecture with:
 - Loading states
 - Clean code principles
 - ESLint for code quality
+
+## Components
+
+### 1. ArticleList
+- **Props:**
+  - `articles`: Array of articles to display.
+  - `isLoading`: Boolean to indicate loading state.
+  - `error`: Error object if fetching articles fails.
+- **Responsibilities:**
+  - Render a loading spinner during data fetching.
+  - Display a list of articles with titles, abstracts, bylines, and publication dates.
+  - Handle navigation to the article detail page on click.
+- **Key Interactions:**
+  - Fetches data from `fetchMostViewedArticles`.
+  - Passes the selected article's ID to the detail route.
+
+### 2. ArticleDetail
+- **Props:**
+  - `articles`: Array of articles (from context or parent).
+- **Responsibilities:**
+  - Render detailed content of the selected article.
+  - Handle "Back to Articles" navigation.
+  - Provide an external link to the full article.
+- **Key Interactions:**
+  - Matches the article ID from `useParams` to fetch the correct article.
+
+### 3. App
+- **Responsibilities:**
+  - Top-level component managing routing.
+  - Fetch data using `fetchMostViewedArticles`.
+  - Handle global states: `articles`, `isLoading`, and `error`.
+  - Render `ArticleList` and `ArticleDetail` components based on routes.
+
+## Utilities
+
+### 1. fetchMostViewedArticles (API Service)
+- **Responsibilities:**
+  - Fetch most-viewed articles from the NY Times API.
+  - Handle errors and data transformation (if required).
+- **Implementation Notes:**
+  - Use `axios` or `fetch` to make an HTTP GET request.
+  - Transform the API response to match the component's expected structure.
+
+## Routes
+
+### 1. `/` (Home Page)
+- Component: `ArticleList`
+- Displays the list of most-viewed articles.
+
+### 2. `/article/:id` (Article Detail Page)
+- Component: `ArticleDetail`
+- Displays the detailed view of a selected article.
+
+## Data Models
+
+### 1. Article (TypeScript Interface)
+```typescript
+interface Article {
+  id: number;
+  title: string;
+  abstract: string;
+  byline: string;
+  published_date: string;
+  url: string;
+  media: {
+    'media-metadata': { url: string }[];
+  }[];
+}
+```
+
+## State Management
+
+### State Variables (in `App`):
+- `articles`: Array of `Article`.
+- `isLoading`: Boolean to indicate loading state.
+- `error`: Holds error details if API call fails.
+
+### State Flow:
+- `App` fetches articles and passes them as props to `ArticleList` and `ArticleDetail`.
+
+## Interactions
+
+### Article Selection
+1. `ArticleList`:
+   - User clicks on an article.
+   - Navigates to `/article/:id` with the selected article ID.
+2. `ArticleDetail`:
+   - Matches the `id` parameter to fetch the article details from `articles`.
+
+### Error Handling
+- If the API call fails:
+  - `error` state is updated in `App`.
+  - `ArticleList` displays the error message.
+
+## Styling
+
+### CSS Framework: TailwindCSS
+
+### Key Design Choices:
+- Minimalist and responsive layout.
+- Cards for the article list.
+- Typography hierarchy for readability.
+
+
+  
