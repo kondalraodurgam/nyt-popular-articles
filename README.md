@@ -18,11 +18,10 @@ This React application displays the most popular articles from the NY Times API,
 Before running the application, you need to:
 
 1. Sign up for an API key at [NY Times Developer Portal](https://developer.nytimes.com/get-started)
-2. Create a `.env` file in the root directory with  API key:
+2. Create a `.env` file in the root directory with  your API key:
 
 ```
-VITE_NYT_API_KEY=1xZAeiTPA6vsWWJMzFtVf89mJEM6CPKx
-```
+VITE_NYT_API_KEY= add your API key
 
 ## Installation
 
