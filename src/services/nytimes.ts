@@ -1,4 +1,4 @@
-const API_KEY = "1xZAeiTPA6vsWWJMzFtVf89mJEM6CPKx";
+const API_KEY = "your API key";
 const BASE_URL = 'https://api.nytimes.com/svc/mostpopular/v2';
 
 export async function fetchMostViewedArticles(period: 1 | 7 | 30 = 7) {
