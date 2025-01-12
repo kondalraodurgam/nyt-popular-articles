@@ -44,6 +44,8 @@ npm install
 ## Project Management
 
 - Wireframes
+  
+ ![image](https://github.com/user-attachments/assets/d197613e-b298-4e82-ba88-f8bdfe0d283f)
 
  ![image](https://github.com/user-attachments/assets/d3617721-6b45-4bca-a9d2-ab315736e5b3)
 
