@@ -1,0 +1,23 @@
+{
+  "status": "OK",
+  "results": [
+    {
+      "id": 1,
+      "title": "Test Article 1",
+      "abstract": "This is a test article abstract",
+      "byline": "By Test Author",
+      "published_date": "2024-03-14",
+      "url": "https://example.com/article1",
+      "media": []
+    },
+    {
+      "id": 2,
+      "title": "Test Article 2",
+      "abstract": "Another test article abstract",
+      "byline": "By Another Author",
+      "published_date": "2024-03-14",
+      "url": "https://example.com/article2",
+      "media": []
+    }
+  ]
+}
