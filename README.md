@@ -41,6 +41,16 @@ npm install
 - `npm run e2e:headless` - Run E2E tests headlessly
 - `npm run lint` - Run ESLint
 
+## Project Management
+
+- Wireframes
+
+ ![image](https://github.com/user-attachments/assets/d3617721-6b45-4bca-a9d2-ab315736e5b3)
+
+ ![image](https://github.com/user-attachments/assets/8bb20eea-c085-402b-a9db-d6ed34d4eca4)
+
+
+
 ## Architecture
 
 The application follows a component-based architecture with:
